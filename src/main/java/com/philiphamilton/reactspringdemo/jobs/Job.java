@@ -7,7 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.Builder;
+
 @Entity
+@Builder
 public class Job {
 	
 	private @Id @GeneratedValue Long id;
@@ -22,11 +25,25 @@ public class Job {
 	private String linkToJob;
 	private ArrayList<String> technologies;
 	
-	private Job() {}
+	public Job() {}
 	
 	public Job(String company, boolean applied, String title, String description, Date dateApplied, boolean interview,
 			Date interviewDate, String contactAtCompany, String linkToJob, ArrayList<String> technologies) {
 		super();
+		this.company = company;
+		this.applied = applied;
+		this.title = title;
+		this.description = description;
+		this.dateApplied = dateApplied;
+		this.interview = interview;
+		this.interviewDate = interviewDate;
+		this.contactAtCompany = contactAtCompany;
+		this.linkToJob = linkToJob;
+		this.technologies = technologies;
+	}
+
+	public Job(Long id, String company, boolean applied, String title, String description, Date dateApplied, boolean interview, Date interviewDate, String contactAtCompany, String linkToJob, ArrayList<String> technologies) {
+		this.id = id;
 		this.company = company;
 		this.applied = applied;
 		this.title = title;

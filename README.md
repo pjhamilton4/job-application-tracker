@@ -1,2 +1,2 @@
 # job-application-tracker
-Job application tracker using Spring Boot and React
+Job application tracker using Spring Boot for the API
